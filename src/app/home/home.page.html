@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Device Tracker
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="true">
+      <ion-list-header>
+        <ion-label>Select Device to Watch</ion-label>
+      </ion-list-header>
+      <ion-item *ngFor="let item of devices" click="openDevice(item)">
+        <ion-icon name="locate"></ion-icon>
+        <ion-label>{{item.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-button color="primary" (click)="addDevice();">Add Device</ion-button>
+</ion-content>
